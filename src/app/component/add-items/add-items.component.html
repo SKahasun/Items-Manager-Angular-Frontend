@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col">
+    <h2 class="display-5 mb-3">Add new items</h2>
+  </div>
+  <form #f="ngForm" (ngSubmit)="onSubmitForm()">
+    <div class="row">
+      <label class="form-label fw-bold col-2">Item Name</label>
+      <div class="col-8">
+        <input
+          class="form-control form-control-sm"
+          name="ItemName"
+          [(ngModel)]="item.itemName"
+          #ItemName="ngModel"
+          required
+        />
+      </div>
+      <div class="col-2">
+        <span class="text-danger" *ngIf="ItemName.touched && ItemName.invalid"
+          >Item name is requred!!</span
+        >
+      </div>
+    </div>
+    <div class="row mt-2">
+      <label class="col-2 form-label fw-bold">Unit Price</label>
+      <div class="col-8">
+        <input
+          class="form-control form-control-sm"
+          name="unitPrice"
+          [(ngModel)]="item.unitPrice"
+          #unitPrice="ngModel"
+          required
+        />
+      </div>
+      <div class="col-2">
+        <span class="text-danger" *ngIf="unitPrice.touched && unitPrice.invalid"
+          >Unit Price is required</span
+        >
+      </div>
+    </div>
+    <div class="mt-2 row">
+      <label class="form-label fw-bold col-2">Stock</label>
+      <div class="col-8">
+        <input
+          class="form-control form-control-sm"
+          name="stock"
+          [(ngModel)]="item.stock"
+          #stock="ngModel"
+          required
+        />
+      </div>
+      <div class="col-2">
+        <span class="text-danger" *ngIf="stock.touched && stock.invalid"
+          >Stock is required!!!</span
+        >
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-10 offset-2">
+        <button class="btn btn-outline-primary btn-sm" type="submit">
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

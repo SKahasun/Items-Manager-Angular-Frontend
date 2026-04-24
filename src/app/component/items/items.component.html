@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col">
+    <h2 class="display-5 mb-2">Item List</h2>
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-outline-primary mb-2" [routerLink]="['/add-items']"
+        >Add new items</a
+      >
+    </div>
+
+    <table class="table table-bordered table-striped table-sm table-hover">
+      <thead>
+        <tr>
+          <th>Item Id</th>
+          <th>Item Name</th>
+          <th>Item Price</th>
+          <th>Item Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of item">
+          <td>{{ i.itemId }}</td>
+          <td>{{ i.itemName }}</td>
+          <td>{{ i.unitPrice }}</td>
+          <td>{{ i.stock }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
